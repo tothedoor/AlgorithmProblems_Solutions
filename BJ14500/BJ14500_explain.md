@@ -19,7 +19,7 @@
 
 <br/>
 
-![common feature](./img/commonFeature.jpg)
+![common feature](../img/commonFeature.jpg)
 
 위의 이미지를 보면 'ㅏ' 모양을 제외한 테트로미노들은 변을 마주보고 이웃한 구역으로  
 총 4칸을 확장하여 모양을 이룸을 확인했다. 때문에 한 정점에서 확장 가능한 영역(주어진 종이의 영역 내)  
