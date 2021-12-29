@@ -1,3 +1,5 @@
+package Programmers_lotto;
+
 class Solution {
     public int getRank(int sameNumCnt) {
         int rank;
@@ -7,7 +9,7 @@ class Solution {
             rank = 7 - sameNumCnt;
         return rank;
     }
-    
+
     public int[] solution(int[] lottos, int[] win_nums) {
         int[] answer = new int[2];
         int max = 0;
