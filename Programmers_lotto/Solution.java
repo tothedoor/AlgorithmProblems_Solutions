@@ -1,4 +1,13 @@
 class Solution {
+    public int getRank(int sameNumCnt) {
+        int rank;
+        if (sameNumCnt < 2)
+            rank = 6;
+        else
+            rank = 7 - sameNumCnt;
+        return rank;
+    }
+    
     public int[] solution(int[] lottos, int[] win_nums) {
         int[] answer = new int[2];
         int max = 0;
@@ -14,21 +23,14 @@ class Solution {
                         min++;
                         max++;
                     }
-
+                        
                 }
             }
         }
-
-        if (max > 1)
-            answer[0] = 7 - max;
-        else
-            answer[0] = 6;
-
-        if (min > 1)
-            answer[1] = 7 - min;
-        else
-            answer[1] = 6;
-
+        
+        answer[0] = getRank(max);
+        answer[1] = getRank(min);
+        
         return answer;
     }
 }
