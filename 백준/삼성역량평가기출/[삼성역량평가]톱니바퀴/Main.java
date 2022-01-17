@@ -1,4 +1,4 @@
-import java.io.BufferedReader;
+﻿import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.Array;
@@ -22,14 +22,6 @@ class Main {
             int rotationDirection = rotationInfos[i][1];
             setTouchedInfo();
             rotateGear(gearNum, rotationDirection);
-
-            // 디버깅
-            System.out.println(gearInfos.get(0).toString());
-            System.out.println(gearInfos.get(1).toString());
-            System.out.println(gearInfos.get(2).toString());
-            System.out.println(gearInfos.get(3).toString());
-            System.out.println(touchedInfo.toString());
-            System.out.println();
         }
 
         int answer = getSum();
@@ -85,12 +77,12 @@ class Main {
         }
 
         // 맞물려있는 기어들에 대해 확인 후 회전
-        if (gearNum - 1 > 0) { // 왼쪽과의 확인
-            if (!isSame(gearNum - 1, gearNum))
+        if (gearNum - 1 >= 0) { // 왼쪽과의 확인
+            if (!isSame(gearNum - 1, gearNum)) // 같지 않은 경우에 돌아야 하므로
                 rotateGear(gearNum - 1, newRotateDirection);
         }
         if (gearNum + 1 < 4) { // 오른쪽과의 확인
-            if (!isSame(gearNum, gearNum + 1))
+            if (!isSame(gearNum, gearNum + 1)) // 같지 않은 경우에 돌아야 하므로
                 rotateGear(gearNum + 1, newRotateDirection);
         }
     }
@@ -128,6 +120,4 @@ class Main {
             rotationInfos[i][1] = Integer.parseInt(st.nextToken());
         }
     }
-
-
 }
